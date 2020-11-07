@@ -1,0 +1,12 @@
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\bin\Debug\netcoreapp2.1\Turing.deps.json
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\bin\Debug\netcoreapp2.1\Turing.runtimeconfig.json
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\bin\Debug\netcoreapp2.1\Turing.runtimeconfig.dev.json
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\bin\Debug\netcoreapp2.1\Turing.dll
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\bin\Debug\netcoreapp2.1\Turing.pdb
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.csprojAssemblyReference.cache
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.csproj.CoreCompileInputs.cache
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.AssemblyInfoInputs.cache
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.AssemblyInfo.cs
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.dll
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.pdb
+C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\obj\Debug\netcoreapp2.1\Turing.genruntimeconfig.cache
