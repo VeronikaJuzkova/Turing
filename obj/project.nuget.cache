@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dLbXN9YxsNlcBWky8K0EsSBfosVL1z/OpFmbeuOsuyIj96c1Q4L7CO415yLVeG/XAMoF4SuOBTuDnmMoUu3dlA==",
+  "dgSpecHash": "iopaoxjcaL6kchEL52ks6RhcmpkqWtYaY6ExLllqgaG/6vjFzHoT3Ll/XcWj+74G5lxkcN2EzN15LHZ/o7FUpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing.csproj",
+  "projectFilePath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing\\Turing.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",

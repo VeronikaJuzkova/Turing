@@ -6,40 +6,45 @@ namespace Turing
 {
     class PP
     {
-        public List<string> Comands;
-        public int Position = 0;
+        public IComands Comands;
         public Memory ActualMemory;
 
-        public PP(List<string> comands)
+        public PP(IComands comands, Memory actualMemory)
         {
             Comands = comands;
+            ActualMemory = actualMemory;
         }
 
         public void doNext()
         {
-            switch(Comands[Position])
+            switch(Comands.GetNextComand())
             {
                 case "if":
-                    if (ActualMemory.GetValueAtPosition(ActualMemory.GetFirstPointerValue())==0)
+                    if (ActualMemory.GetValueUnderPointer(ActualMemory.GetFirstPointer()) == 0)
                     {
-                        Position = Position + 1;
+                        Comands.Skip();
                     }
                     break;
                 case "move":
-                    Position = Position + 1;
-                    ActualMemory.MovePointers(Int32.Parse(Comands[Position]));
+                    ActualMemory.MovePointers(Comands.GetParameter());
                     break;
                 case "go":
-                    Position = Int32.Parse(Comands[Position + 1]);
+                    Comands.Go(Comands.GetParameter());
                     break;
                 case "add":
                     ActualMemory.Add();
                     break;
+                case "sub":
+                    ActualMemory.Subtract();
+                    break;
                 case "print":
-                    Console.WriteLine(ActualMemory.GetValueAtPosition(ActualMemory.GetFirstPointerValue()));
+                    Console.WriteLine(ActualMemory.GetValueUnderPointer(ActualMemory.GetFirstPointer()));
+                    break;
+                case "exit":
+                    Console.WriteLine("Program terminated.");
+                    System.Environment.Exit(0);
                     break;
             }
-            Position = Position + 1;
         }
     }
 }

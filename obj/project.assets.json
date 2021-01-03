@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing.csproj",
+      "projectUniqueName": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing\\Turing.csproj",
       "projectName": "Turing",
-      "projectPath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing.csproj",
+      "projectPath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing\\Turing.csproj",
       "packagesPath": "C:\\Users\\veron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\obj\\",
+      "outputPath": "C:\\Users\\veron\\OneDrive\\Plocha\\Škola\\Ročníkové práce\\Turingův stroj\\Turing\\Turing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -716,6 +716,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {}
         }
       },
@@ -727,6 +728,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
@@ -745,7 +747,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

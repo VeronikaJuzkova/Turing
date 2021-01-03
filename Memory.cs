@@ -6,24 +6,29 @@ namespace Turing
 {
     class Memory
     {
-        private List<int> Me; //paměť
+        private List<int> Content; //paměť
         private List<Pointer> Pointers; //indexy ukazatelů
 
 
-        public Memory(List<int> me, List<Pointer> pointers)
+        public Memory(List<int> content, List<Pointer> pointers)
         {
-            Me = me;
+            Content = content;
             Pointers = pointers;
         }
 
-        public int GetFirstPointerValue()
+        public int GetValueUnderPointer(Pointer pointer)
         {
-            return Me[Pointers[0].Position];
+            return Content[pointer.Position];
         }
 
-        public int GetValueAtPosition(int index)
+        public Pointer GetFirstPointer()
         {
-            return Me[index];
+            return Pointers[0];
+        }
+
+        private int GetValueAtPosition(int index)
+        {
+            return Content[index];
         }
 
         public void MovePointers(int index)
@@ -46,13 +51,23 @@ namespace Turing
             {
                 sum = sum + GetValueAtPosition(element.Position);
             }
-            Me[GetFirstPointerValue()] = sum;
+            Content[GetFirstPointer().Position] = sum;
+        }
+
+        public void Subtract()
+        {
+            int sum = this.GetValueUnderPointer(this.GetFirstPointer());
+            for (int i=1;i<Pointers.Count;i++)
+            {
+                sum = sum - GetValueUnderPointer(Pointers[i]);
+            }
+            Content[GetFirstPointer().Position] = sum;
         }
 
         public void PrintForDebuging()
         {
             Console.Write("Memory: ");
-            Me.ForEach(Console.Write);
+            Content.ForEach(Console.Write);
             Console.WriteLine();
             Console.Write("Pointers: ");
             foreach (Pointer pointer in Pointers)
