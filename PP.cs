@@ -6,30 +6,30 @@ namespace Turing
 {
     class PP
     {
-        public IComands Comands;
+        public Icommands Commands;
         public Memory ActualMemory;
 
-        public PP(IComands comands, Memory actualMemory)
+        public PP(Icommands commands, Memory actualMemory)
         {
-            Comands = comands;
+            Commands = commands;
             ActualMemory = actualMemory;
         }
 
-        public void doNext()
+        public void DoNext()
         {
-            switch(Comands.GetNextComand())
+            switch(Commands.GetNextcommand())
             {
                 case "if":
                     if (ActualMemory.GetValueUnderPointer(ActualMemory.GetFirstPointer()) == 0)
                     {
-                        Comands.Skip();
+                        Commands.Skip();
                     }
                     break;
                 case "move":
-                    ActualMemory.MovePointers(Comands.GetParameter());
+                    ActualMemory.MovePointers(Commands.GetParameter());
                     break;
                 case "go":
-                    Comands.Go(Comands.GetParameter());
+                    Commands.Go(Commands.GetParameter());
                     break;
                 case "add":
                     ActualMemory.Add();

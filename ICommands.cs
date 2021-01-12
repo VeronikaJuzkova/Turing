@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Turing
 {
-    interface IComands
+    interface Icommands
     {
-        string GetNextComand();
+        string GetNextcommand();
 
         int GetParameter();
 

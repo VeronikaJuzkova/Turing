@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Turing
@@ -12,6 +13,7 @@ namespace Turing
 
         public Memory(List<int> content, List<Pointer> pointers)
         {
+            Debug.Assert(pointers.Count > 0, "Memory needs to have at least 1 pointer!");
             Content = content;
             Pointers = pointers;
         }
@@ -64,17 +66,23 @@ namespace Turing
             Content[GetFirstPointer().Position] = sum;
         }
 
-        public void PrintForDebuging()
+        public string Print()
         {
-            Console.Write("Memory: ");
-            Content.ForEach(Console.Write);
-            Console.WriteLine();
-            Console.Write("Pointers: ");
+            string tbr = "";
+            tbr += ("Memory: |");
+            foreach (int cell in Content)
+            {
+                tbr += (cell);
+                tbr += ("|");
+            }
+            tbr += ("\nPointers: |");
             foreach (Pointer pointer in Pointers)
             {
-                Console.Write(pointer.Position);
+                tbr += (pointer.Position);
+                tbr += ("|");
             }
-            Console.WriteLine();
+            tbr += ("\n");
+            return tbr;
         }
     }
 }

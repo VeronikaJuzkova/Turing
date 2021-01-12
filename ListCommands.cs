@@ -1,25 +1,21 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Turing
 {
-    class FileComands : IComands
+    class Listcommands : Icommands 
     {
-        public String[] Content;
+        public List<string> Content;
         public int Position;
 
-        public FileComands()
+        public Listcommands(List<string> content)
         {
-            using (StreamReader sr = File.OpenText(@"C:\Users\veron\OneDrive\Plocha\Škola\Ročníkové práce\Turingův stroj\Turing\Turing\InsertProgramHere.txt"))
-            {
-                string a = sr.ReadToEnd();
-                Content = a.Split("\r\n");
-            }
+            Content = content;
+            Position = 0;
         }
 
-        public string GetNextComand()
+        public string GetNextcommand()
         {
             string tbr = Content[Position];
             Position++;

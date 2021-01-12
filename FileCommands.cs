@@ -1,21 +1,27 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Turing
 {
-    class ListComands : IComands 
+    class Filecommands : Icommands
     {
-        public List<string> Content;
+        private readonly string Path;
+        public String[] Content;
         public int Position;
 
-        public ListComands(List<string> content)
+        public Filecommands(string path)
         {
-            Content = content;
-            Position = 0;
+            Path = path;
+            using (StreamReader sr = File.OpenText(Path))
+            {
+                string a = sr.ReadToEnd();
+                Content = a.Split("\r\n");
+            }
         }
 
-        public string GetNextComand()
+        public string GetNextcommand()
         {
             string tbr = Content[Position];
             Position++;
