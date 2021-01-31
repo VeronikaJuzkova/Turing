@@ -1,8 +1,0 @@
-﻿add
-add
-add
-move
-3
-sub
-print
-exit

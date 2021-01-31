@@ -4,18 +4,18 @@ using System.Text;
 
 namespace Turing
 {
-    class Listcommands : Icommands 
+    class ListCommands : ICommands 
     {
         public List<string> Content;
         public int Position;
 
-        public Listcommands(List<string> content)
+        public ListCommands(List<string> content)
         {
             Content = content;
             Position = 0;
         }
 
-        public string GetNextcommand()
+        public string GetNextCommand()
         {
             string tbr = Content[Position];
             Position++;
@@ -24,9 +24,15 @@ namespace Turing
 
         public int GetParameter()
         {
-            int tbr = Int32.Parse(Content[Position]);
+            string stringParameter = Content[Position];
+            if (stringParameter == "print")
+            {
+                Position++;
+                return -1;
+            }
+            int intParameter = Int32.Parse(stringParameter);
             Position++;
-            return tbr;
+            return intParameter;
         }
 
         public void Go(int where)
@@ -36,7 +42,7 @@ namespace Turing
 
         public void Skip()
         {
-            Position = Position + 1;
+            Position += 1;
         }
     }
 }

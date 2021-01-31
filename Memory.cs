@@ -7,8 +7,8 @@ namespace Turing
 {
     class Memory
     {
-        private List<int> Content; //paměť
-        private List<Pointer> Pointers; //indexy ukazatelů
+        private readonly List<int> Content; //paměť
+        private readonly List<Pointer> Pointers; //indexy ukazatelů
 
 
         public Memory(List<int> content, List<Pointer> pointers)
@@ -36,9 +36,9 @@ namespace Turing
         public void MovePointers(int index)
         {
             //Pointers.ForEach(Console.Write);
+            Debug.Assert(index < Content.Count, "Memory does not have specified index.");
             for (int i=Pointers.Count-1; i>0; i--)
             {
-                Console.WriteLine("moving");
                 Pointers[i].Position = Pointers[i - 1].Position;
                 
             }
@@ -51,37 +51,37 @@ namespace Turing
             int sum = 0;
             foreach (Pointer element in Pointers)
             {
-                sum = sum + GetValueAtPosition(element.Position);
+                sum += GetValueAtPosition(element.Position);
             }
             Content[GetFirstPointer().Position] = sum;
         }
 
         public void Subtract()
         {
-            int sum = this.GetValueUnderPointer(this.GetFirstPointer());
+            int sum = GetValueUnderPointer(GetFirstPointer());
             for (int i=1;i<Pointers.Count;i++)
             {
-                sum = sum - GetValueUnderPointer(Pointers[i]);
+                sum -= GetValueUnderPointer(Pointers[i]);
             }
             Content[GetFirstPointer().Position] = sum;
         }
 
-        public string Print()
+        public override string ToString()
         {
             string tbr = "";
-            tbr += ("Memory: |");
+            tbr += "Memory: |";
             foreach (int cell in Content)
             {
-                tbr += (cell);
-                tbr += ("|");
+                tbr += cell;
+                tbr += "|";
             }
-            tbr += ("\nPointers: |");
+            tbr += "\nPointers: |";
             foreach (Pointer pointer in Pointers)
             {
                 tbr += (pointer.Position);
-                tbr += ("|");
+                tbr += "|";
             }
-            tbr += ("\n");
+            tbr += "\n";
             return tbr;
         }
     }

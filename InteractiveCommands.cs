@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Turing
 {
-    class Interactivecommands : Icommands
+    class InteractiveCommands : ICommands
     {
-        readonly List<string> existingcommands = new List<string> { "if", "move", "go", "add", "sub", "print", "exit", "help" };
-        public Interactivecommands()
+        readonly List<string> existingCommands = new List<string> { "if", "move", "go", "add", "sub", "print", "exit", "help" };
+        public InteractiveCommands()
         {
             // Getting starting parameters
             Console.WriteLine("Hello!");
@@ -65,32 +65,35 @@ namespace Turing
             }
             Memory actualMemory = new Memory(actualCells, actualPointers);
 
-            PP actualPP = new PP(this, actualMemory);
+            // Creating head
+            Head actualHead = new Head(this, actualMemory,false);
 
             // running
             while (true)
             {
-                WriteState(actualMemory.Print());
-                actualPP.DoNext();
+                WriteState(actualMemory.ToString());
+                actualHead.DoNext();
             }
         }
 
-        public string? GetNextcommand()
+        public string? GetNextCommand()
         {
             WriteInstruction("Write command.");
-            string actualcommand = ReadInput();
-            while (!existingcommands.Contains(actualcommand))
+            string actualCommand = ReadInput();
+            while (!existingCommands.Contains(actualCommand))
             {
                 WriteWarning("Please write an existing command.");
                 WriteInfo("Existing commands are: if, move, go, add, sub, print, exit and help.");
-                actualcommand = ReadInput();
+                WriteInfo("Type help if you need to clarify any of the commands.");
+                WriteInstruction("Write command.");
+                actualCommand = ReadInput();
             }
-            if (actualcommand == "help")
+            if (actualCommand == "help")
             {
                 Help();
                 return null;
             }
-            return actualcommand;
+            return actualCommand;
         }
 
         public int GetParameter()
@@ -100,11 +103,16 @@ namespace Turing
             {
                 try
                 {
-                    int tbr =  Int32.Parse(ReadInput());
+                    string stringParameter = ReadInput();
+                    if (stringParameter == "print")
+                    {
+                        return -1;
+                    }
+                    return Int32.Parse(ReadInput());
                 }
                 catch (System.FormatException)
                 {
-                    WriteWarning("Parameter must be a natural number");
+                    WriteWarning("Parameter must be a natural number or 'print'");
                     WriteInstruction("Write parameter.");
                 }
 

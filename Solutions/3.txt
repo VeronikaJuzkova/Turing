@@ -1,0 +1,15 @@
+﻿#1-cell-memory, first cell hat the value of 1
+print
+add
+print
+add
+print
+add
+print
+add
+print
+add
+print
+add
+print
+exit

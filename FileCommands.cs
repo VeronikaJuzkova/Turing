@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Turing
 {
-    class Filecommands : Icommands
+    class FileCommands : ICommands
     {
         private readonly string Path;
         public String[] Content;
         public int Position;
 
-        public Filecommands(string path)
+        public FileCommands(string path)
         {
             Path = path;
             using (StreamReader sr = File.OpenText(Path))
@@ -21,7 +21,7 @@ namespace Turing
             }
         }
 
-        public string GetNextcommand()
+        public string GetNextCommand()
         {
             string tbr = Content[Position];
             Position++;
@@ -30,9 +30,15 @@ namespace Turing
 
         public int GetParameter()
         {
-            int tbr = Int32.Parse(Content[Position]);
+            string stringParameter = Content[Position];
+            if (stringParameter == "print")
+            {
+                Position++;
+                return -1;
+            }
+            int intParameter = Int32.Parse(stringParameter);
             Position++;
-            return tbr;
+            return intParameter;
         }
 
         public void Go(int where)
@@ -42,7 +48,7 @@ namespace Turing
 
         public void Skip()
         {
-            Position = Position + 1;
+            Position += 1;
         }
     }
 }

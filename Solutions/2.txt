@@ -1,0 +1,16 @@
+﻿#5-cell-memory, all ones
+move
+2
+add
+move
+3
+add
+move
+4
+add
+move
+0
+move
+0
+sub
+exit

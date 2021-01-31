@@ -1,0 +1,22 @@
+﻿#4-cell-memory, first cell has the value of 7, second and third cells has the value of 1, fourth cell hav the value of 0
+#three pointers at any positions
+move
+1
+move
+1
+move
+1
+print
+add
+move
+2
+move
+3
+move
+0
+sub
+if
+go
+2
+exit
+

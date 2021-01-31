@@ -1,0 +1,17 @@
+﻿#3-cell-memory, first cell has the value of 7, second and third cells has the value of 1
+move
+1
+move
+1
+print
+add
+move
+2
+move
+0
+sub
+if
+go
+1
+exit
+
